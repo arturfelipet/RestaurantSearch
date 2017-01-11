@@ -3,7 +3,7 @@ Restaurant Search Project
 
 1) Platform and Language used
 
-I choose to implement it on iOS/Objective-C because it’s the platform/language i have most knowledge.
+I choose to implement on iOS/Objective-C because it’s the platform/language i have most knowledge.
 
 
 2) How to Use ?
@@ -22,11 +22,11 @@ I trend to try to code as much low coupling and high cohesion i can with my curr
 
 The code is divided in 3 main blocks: UI, Business and Infrastructure.
 
-- UI: have every UI elements and some design patterns that help to organize and keep code clean like the basic MVC and to create each view i used a view factory so its easier to change screen flows if needed as no view knows the existence of the other views.
+- UI: have UI views/controllers and some design patterns that help to organize. To keep code clean i used a view factory so its easier to change screen flows if needed as no viewController knows the existence of the other views.
 
-- Business: is where every business related rules are implemented and organized in some data managers and commands.
+- Business: every business related rules are implemented and organized in some data managers and commands.
 
-- Infrastructure: is where third party components are and lower level base classes.
+- Infrastructure: third party components and lower level base classes are normally on this block.
 
 
 4) APIs
@@ -58,18 +58,7 @@ To use RemotePushNotification i would probably need to code a simple server to c
 - Users can only cast one vote per day.
 - A restaurant cannot be chosen more than once on the same week.
 - Users can see the most voted restaurants on the day any time on the current day, even after vote time ends.
-- The vote/search/notification time is set in Business/config/ConstantsBusiness.h
-
-	//-------------------------------------------------------------------
-	//        Votes Limit Time
-	//-------------------------------------------------------------------
-	#define K_VotesStartTime @"08:00:00"
-	#define K_VotesEndTime @"12:00:00"
-	#define K_WinnerNotificationTime @"12:15:00"
-	#define K_SearchStartTime @"00:00:00"
-	#define K_SearchEndTime @"23:59:59"
-	//-------------------------------------------------------------------
-
+- The votes schedule is set in Business/config/ConstantsBusiness.h. it’s set by default to accept votes from 8:00 until 12:00 and 12:15 it shows the most voted restaurant.
 - Users get notified about the chosen restaurant when the daily deadline is reached.
 - Tried to have support to most iOS versions possible so it supports iOS 8 above.
 
