@@ -17,6 +17,7 @@
 
 @interface VotesManager () {
     BOOL alreadyVoted;
+    BOOL alreadySendToHistory;
 }
 
 @property (strong, nonatomic) NSMutableArray *placesWithVotes;
@@ -55,6 +56,7 @@
     self.placesWithVotes = [[NSMutableArray alloc] init];
     self.votes = [[NSMutableArray alloc] init];
     alreadyVoted = YES;
+    alreadySendToHistory = NO;
     
     [self getTodayVotes];
     [self getUserVotes];
@@ -172,17 +174,22 @@
                 if(results.count == 0){
                     NSDictionary *choosenRestaurant = [[VotesManager sharedInstance] consolidateVotes];
                     
-                    [[InsertHistoryCommand sharedInstance] insertHistoryWithPlaceID:[choosenRestaurant objectForKey:@"place_id"]
-                                                                      withPlaceName:[choosenRestaurant objectForKey:@"name"]
-                                                                      withVoteCount:[NSString stringWithFormat:@"%@", [choosenRestaurant objectForKey:@"votes"]]
-                                                                       withLatitude:[[[[choosenRestaurant objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lat"] stringValue]
-                                                                      withLongitude:[[[[choosenRestaurant objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lng"] stringValue]
-                                                                          withBlock:^(NSDictionary *result, NSError *error) {
-                                                                              if(error){
-                                                                                  NSLog(@"%@", error.localizedDescription);
-                                                                              }
-                                                                          }];
-                    
+                    if(choosenRestaurant){
+                        if(!alreadySendToHistory){
+                            alreadySendToHistory = YES;
+                            
+                            [[InsertHistoryCommand sharedInstance] insertHistoryWithPlaceID:[choosenRestaurant objectForKey:@"place_id"]
+                                                                              withPlaceName:[choosenRestaurant objectForKey:@"name"]
+                                                                              withVoteCount:[NSString stringWithFormat:@"%@", [choosenRestaurant objectForKey:@"votes"]]
+                                                                               withLatitude:[[[[choosenRestaurant objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lat"] stringValue]
+                                                                              withLongitude:[[[[choosenRestaurant objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lng"] stringValue]
+                                                                                  withBlock:^(NSDictionary *result, NSError *error) {
+                                                                                      if(error){
+                                                                                          NSLog(@"%@", error.localizedDescription);
+                                                                                      }
+                                                                                  }];
+                        }
+                    }
                 }
             }
         }];

@@ -19,7 +19,6 @@
 
 @interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>{
     Boolean showDisplayAll;
-    Boolean semaphore;
 }
 
 @property NSMutableArray *objects;
@@ -51,9 +50,7 @@
     [self.tableViewSearchResult setHidden:YES];
     [self.labelNoResult setHidden:YES];
     
-    [self prefersStatusBarHidden];
-    
-    semaphore = NO;
+    [self prefersStatusBarHidden];        
     
     self.title = @"Restaurants Nearby";
     
