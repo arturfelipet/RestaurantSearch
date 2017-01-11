@@ -43,7 +43,7 @@
     
     [self prefersStatusBarHidden];
     
-    self.title = @"Choosen restaurants";
+    self.title = @"Chosen restaurants";
     
     self.History = [[NSMutableArray alloc] init];
     
