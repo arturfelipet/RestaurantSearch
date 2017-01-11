@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  RestaurantSearch
+ 
+  Created by Artur Felipe on 01/07/17.
+  Copyright © 2017 Artur Felipe. All rights reserved.
+
+*/
+
+CFBundleDisplayName = "WhereToLunch";
+//CFBundleShortVersionString = "Restaurant Search version 1.0";
+CFBundleGetInfoString = "Restaurant Search version 1.0, Copyright © 2016 Own.";
+NSHumanReadableCopyright = "Copyright © 2014. \nArtur Felipe";

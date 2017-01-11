@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>953480555743-jh71tkkloh5iijnfq1reg2rr71hia1fa.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.953480555743-jh71tkkloh5iijnfq1reg2rr71hia1fa</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC5bzq8nQnm_ubSqLpbSkn1te-8VIu_zR4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>953480555743</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.arturfelipet.RestaurantSearch</string>
+	<key>PROJECT_ID</key>
+	<string>restaurantsearch-154815</string>
+	<key>STORAGE_BUCKET</key>
+	<string>restaurantsearch-154815.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:953480555743:ios:9cb37f55e32446cc</string>
+	<key>DATABASE_URL</key>
+	<string>https://restaurantsearch-154815.firebaseio.com</string>
+</dict>
+</plist>
