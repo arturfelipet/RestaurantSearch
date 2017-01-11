@@ -358,17 +358,17 @@
             
             
         }
-        else if(![[VotesManager sharedInstance] isVoteValidForPlaceID:[aPlace objectForKey:@"place_id"]]){
+        else if([VotesManager sharedInstance].hasUserAlreadyVotedToday){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName
-                                                            message:@"You already had lunch here this week, please vote for another Restaurant."
+                                                            message:@"You already voted today"
                                                            delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
         }
-        else if([VotesManager sharedInstance].hasUserAlreadyVotedToday){
+        else if(![[VotesManager sharedInstance] isVoteValidForPlaceID:[aPlace objectForKey:@"place_id"]]){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName
-                                                            message:@"You already voted today"
+                                                            message:@"You already had lunch here this week, please vote for another Restaurant."
                                                            delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
