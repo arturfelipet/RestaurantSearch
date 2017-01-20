@@ -6,7 +6,24 @@ Restaurant Search Project
 I choose to implement on iOS/Objective-C because it’s the platform/language i have most knowledge.
 
 
-2) How to Use ?
+2) How to Run ?
+
+The project uses the dependency manager called Cocoapods: https://cocoapods.org.
+
+2.1) if you don’t have cocoa pods installed:
+
+- open a terminal
+- execute the command: “sudo gem install cocoapods”
+
+2.2) if you already have cocoa pods installed: 
+
+- open a terminal
+- navigate to the project root folder
+- execute the command: “pod install”
+- open RestaurantSearch.xcworkspace
+
+
+3) How to Use ?
 
 - First time you open the app you need to register or login
 - A list of restaurants nearby will be shown, touch one of the restaurants to vote in it.
@@ -16,7 +33,7 @@ I choose to implement on iOS/Objective-C because it’s the platform/language i 
 - Touch “Logout” to go back to the SignIn/Login view.
 
 
-3) Logic/code writing style
+4) Logic/code writing style
 
 I trend to try to code as much low coupling and high cohesion i can with my current knowledge and the measured time to each task.
 
@@ -29,7 +46,7 @@ The code is divided in 3 main blocks: UI, Business and Infrastructure.
 - Infrastructure: third party components and lower level base classes are normally on this block.
 
 
-4) APIs
+5) APIs
 
 - For maps it’s used Google Maps API.
 - Restaurant data comes from Google Places API.
@@ -42,7 +59,7 @@ Push Notification is implemented using just a local reminder of when the vote ti
 To use RemotePushNotification i would probably need to code a simple server to check the current firebase database to fire the remote push notification with the restaurant chosen.
 
 
-5) What could be better and implemented in the future 
+6) What could be better and implemented in the future 
 
 - The UI, it’s a really simple and not that pretty user friendly UI. The time i had was dedicated to research, implement business rules and keep code functional, clean, organized and easier to read.
 - Better exceptions care.
@@ -51,7 +68,8 @@ To use RemotePushNotification i would probably need to code a simple server to c
 - Group/teams implementation so it can have more teams instead of considering just one team.
 - Show more restaurant details so it’s easier to choose one.
 
-6) Business Rules Implemented:
+
+7) Business Rules Implemented:
 
 - Users can see a list of restaurants geographically located nearby.
 - Users can see if and how many votes the restaurants appearing in the list have had on the current day.
